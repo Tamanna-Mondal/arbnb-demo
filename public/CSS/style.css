@@ -1,0 +1,93 @@
+ /* navbar */
+body{
+    font-size: xx-small;
+}
+.navbar{
+    background-color: white;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+}
+
+/*  footer */
+footer{
+    height: 2rem;
+    width: 100%;
+    background-color: white;
+    border-top: 0.01rem solid rgb(179, 177, 177);
+    position: fixed;
+    bottom: 0rem;
+  
+}
+.f-info a{
+  text-decoration: none;
+  color: #222222;
+  font-size: 0.6rem;
+
+}
+
+.f-info{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.first-links{
+    font-size: 0.6rem;
+}
+
+/* body */
+ .row-cols-lg-3{ 
+    background-color: white;
+    display: flex;
+ 
+    flex-wrap: wrap;
+    margin: 0; 
+    padding: 1rem;
+    
+  
+}
+
+.card-arbnb{
+    border: none;
+    margin: 0;
+    padding: 0;
+    
+   
+}
+.card-body{
+    padding: 0;
+  
+}
+.card-img-top{
+    width: 100% !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.anchar{
+    height: 14.6rem !important;
+    width: 17rem !important;
+    text-decoration: none !important;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+   opacity: 0.2;
+   background-color: white;
+} 
+
+/* edit */
+.edit-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+/* show page */
+.show-page{
+    height: 40vh;
+}
+

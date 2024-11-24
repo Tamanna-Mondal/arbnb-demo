@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <h5 class="card-title"><%= arbnbs.title %></h5>
+                <img src="<%= arbnbs.image %>"  class="card-img-top show-page" alt="...">
+
+                <div class="card-body">
+                    <p class="card-text">
+                        
+                        <p class="card-text"><%= arbnbs.description %></p>
+                        Price: &#x20b9;<%= arbnbs.price%><br>
+                        <%= arbnbs.location %><br>
+                        <%= arbnbs.country %>   
+                    </p>   
+                   <div class="d-flex justify-content-between ">
+                    
+                        <a href="/arbnb/<%= arbnbs._id %>/edit" class="btn btn-dark "style="width: 150px;">Edit</a>
+
+                         <form method="post" action="/arbnb/<%= arbnbs._id %>?_method=DELETE">
+                            <button class="btn btn-danger " style="width: 150px;">Delete</button>
+                          </form>
+                       
+                      
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+       
+        <div class="reviews col-6 offset-3">
+            <h3>All Reviews</h3>
+            <div class="row">
+                <% for (let review of arbnbs.reviews) { %>
+                    <div class="card col-md-4 col-12 mt-3" >
+                        <div class="card-body">
+                         
+                          <h6 class="card-title">Souvik</h5>
+                          <p class="card-text">Comment: <%= review.comment %> <%= review.rating %> Star</p>
+                          
+                        </div>
+                        <!-- <form class="mb-2" method="post" action="/arbnb/<%= arbnbs._id %>/reviews/<%= review._id %>?_method=DELETE">
+                            <button class=" btn btn-sm btn-dark">Delete</button>
+                        </form> -->
+                        
+                    </div>
+                <% } %>
+            </div>
+           
+            <h4>Reviews</h4>
+            <form method="post" class="mb-3 was-validated" action="/arbnb/<%= arbnbs._id %>/reviews">
+                <div>
+                    <label for="rating" class="form-label" >Rating</label>
+                    <input  
+                    class="form-range" 
+                    type="range" 
+                    min="1" max="5" 
+                    id="rating" 
+                    name="reviews[rating]"
+                    >
+                </div>
+                <div>
+                    <label for="comment" class="form-label" >Comment</label>
+                    <textarea  id="comment"  
+                    class="form-control" 
+                    cols="50" rows="5" 
+                    name="reviews[comment]"
+                    required></textarea>
+                    <div class="invalid-feedback">
+                        Please add Comment.
+                      </div>
+                </div>
+                <button class="mt-3  btn btn-danger">Submit</button>
+            </form>
+
+
+        </div>
+    </div>
+   
+    <br><br>
+</body>

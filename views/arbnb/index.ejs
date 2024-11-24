@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  
+    <div class="row row-cols-lg-3 row-cols-mid-2 row-cols-sm-1"> 
+      <% for(let arbnb of arbnbs) { %>
+        <a href="/arbnb/<%= arbnb.id%>" class="anchar">
+          <div class="card-arbnb " style="width: 16rem;">
+            <img src="<%=arbnb.image%>" class="card-img-top" alt="..." style="height: 10rem;"  >
+     
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+                <p class="card-text">
+                  <b><%=arbnb.title%></b><br>
+                  &#x20b9;<%=arbnb.price%> night
+                </p>
+           
+            </div>
+       
+          </div>
+        </a>
+      
+       <% } %> 
+
+    
+  </div> 
+   
+
+</body>
